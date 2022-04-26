@@ -1,0 +1,131 @@
+# A starter config to use with Trash Updater. Most values are set to "reasonable defaults".
+# Update the values below as needed for your instance. You will be required to update the
+# API Key and URL for each instance you want to use.
+#
+# Many optional settings have been omitted to keep this template simple.
+#
+# For more details on the configuration, see the Configuration Reference on the wiki here:
+# https://github.com/rcdailey/trash-updater/wiki/Configuration-Reference
+
+# Configuration specific to Sonarr
+sonarr:
+    # Set the URL/API Key to your actual instance
+  - base_url: http://192.168.0.215:8989
+    api_key: 862bba0df0144acfab294c3af9c79ce7
+
+    # Quality definitions from the guide to sync to Sonarr. Choice: anime, series, hybrid
+    quality_definition: series
+
+    # Release profiles from the guide to sync to Sonarr. Types: anime, series
+    # You can optionally add tags and make negative scores strictly ignored
+    release_profiles:
+      - type: series
+
+# Configuration specific to Radarr.
+radarr:
+  # Set the URL/API Key to your actual instance
+  - base_url: http://192.168.0.215:7878
+    api_key: 9b362b79f9044601a1805a3141ddc5cd
+
+    # Which quality definition in the guide to sync to Radarr. Only choice right now is 'movie'
+    quality_definition:
+      type: movie
+
+    # Set to 'true' to automatically remove custom formats from Radarr when they are removed from
+    # the guide or your configuration. This will NEVER delete custom formats you manually created!
+    delete_old_custom_formats: true
+
+    custom_formats:
+      # A list of custom formats to sync to Radarr. Must match the "name" in the importable JSON.
+      # Do NOT use the heading names here, those do not work! These are case-insensitive.
+      - names:
+      # Custom formats with negative scores
+          - 3D
+          - BR-DISK
+          - EVO (no WEBDL)
+          - LQ
+          - x265 (720/1080p)
+          - DV (WEBDL)
+          - No-RlsGroup
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: -10000
+          - name: 1080p - Cutoff WEB-DL
+            score: -10000
+          - name: Barnfilmer (1080p/2160p)
+            score: -10000
+          - name: 4K (2160p) - Cutoff Remux
+            score: -10000
+          - name: Standard (1080p/2160p)
+            score: -10000
+
+       # Optionally set other scores to 0 if they are not listed in 'names' above.
+       #     reset_unmatched_scores: false
+
+        # Custom formats with positive scores
+
+      - names: 
+          - DV
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: 0
+          - name: 1080p - Cutoff WEB-DL
+            score: 0
+          - name: Barnfilmer (1080p/2160p)
+            score: 0
+          - name: 4K (2160p) - Cutoff Remux
+            score: 0                        
+          - name: Standard (1080p/2160p)
+            score: 0
+      - names: 
+          - HQ
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: 2000
+          - name: 1080p - Cutoff WEB-DL
+            score: 2000
+          - name: Barnfilmer (1080p/2160p)
+            score: 2000
+          - name: 4K (2160p) - Cutoff Remux
+            score: 2000                        
+          - name: Standard (1080p/2160p)
+            score: 2000
+      - names: 
+          - HQ-Remux
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: 3000
+          - name: 1080p - Cutoff WEB-DL
+            score: 3000
+          - name: Barnfilmer (1080p/2160p)
+            score: 3000
+          - name: 4K (2160p) - Cutoff Remux
+            score: 3000                        
+          - name: Standard (1080p/2160p)
+            score: 3000
+      - names: 
+          - Repack/Proper
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: 1000
+          - name: 1080p - Cutoff WEB-DL
+            score: 1000
+          - name: Barnfilmer (1080p/2160p)
+            score: 1000
+          - name: 4K (2160p) - Cutoff Remux
+            score: 1000                        
+          - name: Standard (1080p/2160p)
+            score: 1000
+      - names:
+          - 5.1 Surround
+        quality_profiles:
+          - name: 1080p - Cutoff Remux
+            score: 100
+          - name: 1080p - Cutoff WEB-DL
+            score: 100
+          - name: Barnfilmer (1080p/2160p)
+            score: 100
+          - name: 4K (2160p) - Cutoff Remux
+            score: 100
+          - name: Standard (1080p/2160p)
+            score: 100
