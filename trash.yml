@@ -90,8 +90,8 @@ radarr:
             score: 2000                        
           - name: Standard (1080p/2160p)
             score: 2000
-      - names: 
-          - HQ-Remux
+      - names: [HQ-Remux]
+          #- HQ-Remux
         quality_profiles:
           - name: 1080p - Cutoff Remux
             score: 3000
