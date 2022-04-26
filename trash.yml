@@ -10,8 +10,8 @@
 # Configuration specific to Sonarr
 sonarr:
     # Set the URL/API Key to your actual instance
-  - base_url: http://192.168.0.215:8989
-    api_key: 862bba0df0144acfab294c3af9c79ce7
+  - base_url: http://192.168.0.210:8989
+    api_key: SECRET_API_KEY
 
     # Quality definitions from the guide to sync to Sonarr. Choice: anime, series, hybrid
     quality_definition: series
@@ -24,8 +24,8 @@ sonarr:
 # Configuration specific to Radarr.
 radarr:
   # Set the URL/API Key to your actual instance
-  - base_url: http://192.168.0.215:7878
-    api_key: 9b362b79f9044601a1805a3141ddc5cd
+  - base_url: http://192.168.0.210:7878
+    api_key: SECRET_API_KEY
 
     # Which quality definition in the guide to sync to Radarr. Only choice right now is 'movie'
     quality_definition:
@@ -64,8 +64,7 @@ radarr:
 
         # Custom formats with positive scores
 
-      - names: 
-          - DV
+      - names: [DV]
         quality_profiles:
           - name: 1080p - Cutoff Remux
             score: 0
@@ -78,7 +77,6 @@ radarr:
           - name: Standard (1080p/2160p)
             score: 0
       - names: [HQ]
-          #- HQ
         quality_profiles:
           - name: 1080p - Cutoff Remux
             score: 2000
@@ -91,7 +89,6 @@ radarr:
           - name: Standard (1080p/2160p)
             score: 2000
       - names: [HQ-Remux]
-          #- HQ-Remux
         quality_profiles:
           - name: 1080p - Cutoff Remux
             score: 3000
@@ -103,8 +100,7 @@ radarr:
             score: 3000                        
           - name: Standard (1080p/2160p)
             score: 3000
-      - names: 
-          - Repack/Proper
+      - names: [Repack/Proper]
         quality_profiles:
           - name: 1080p - Cutoff Remux
             score: 1000
@@ -116,8 +112,7 @@ radarr:
             score: 1000                        
           - name: Standard (1080p/2160p)
             score: 1000
-      - names:
-          - 5.1 Surround
+      - names: [5.1 Surround]
         quality_profiles:
           - name: 1080p - Cutoff Remux
             score: 100
