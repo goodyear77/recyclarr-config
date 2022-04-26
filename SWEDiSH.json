@@ -1,0 +1,15 @@
+{
+  "name": "SWEDiSH",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Swedish",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": "\\b(SWE|SWEDiSH)\\b"
+      }
+    }
+  ]
+}
